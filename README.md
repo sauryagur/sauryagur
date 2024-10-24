@@ -2,10 +2,10 @@
 <h3 align="center">A machine learning student and frontend developer</h3>
 
 - 🔭 I’m currently working on my portfolio
-- 🌱 I’m currently learning MERN Stack and Bootstrap
+- 🌱 I’m currently learning MERN Stack
 - 👯 I’m looking to collaborate on Machine Learning Projects
 - 🤔 I’m looking for help with Backend Development
-- 💬 Ask me about HTML, CSS and Frontend
+- 💬 Ask me about HTML, CSS and Bootstrap
 - 📫 How to reach me: saurya.gur@outlook.com
 
 ## 🌐 Socials:
