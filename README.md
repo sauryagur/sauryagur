@@ -1,9 +1,8 @@
 <h1 align="center">Hi 👋, I'm Saurya Gur</h1>
-<h3 align="center">A machine learning student and frontend developer</h3>
+<h3 align="center">A computer engineering student and frontend developer</h3>
 
 - 🔭 I’m currently working on my portfolio
-- 🌱 I’m currently learning MERN Stack
-- 👯 I’m looking to collaborate on Machine Learning Projects
+- 🌱 I’m currently learning MERN Stack and Machine Learning
 - 🤔 I’m looking for help with Backend Development
 - 💬 Ask me about HTML, CSS and Bootstrap
 - 📫 How to reach me: saurya.gur@outlook.com
