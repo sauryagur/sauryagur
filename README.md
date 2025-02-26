@@ -1,5 +1,4 @@
-## Hey 👋, I'm Saurya Gur!  
-  
+## Hey 👋, I'm Saurya Gur!
 
 <a href="https://github.com/sauryagur" target="_blank">
 <img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
@@ -13,42 +12,47 @@
 <a href="https://instagram.com/sauryeah" target="_blank">
 <img src=https://img.shields.io/badge/instagram-%23000000.svg?&style=for-the-badge&logo=instagram&logoColor=white alt=instagram style="margin-bottom: 5px;" />
 </a>  
-  
+
+### Glad to see you here!
+
+I’m a passionate computer engineering student working on building a strong portfolio to showcase my journey in tech. My
+expertise lies in creating visually appealing and user-friendly frontends using HTML/EJS, CSS, and Bootstrap, but I’m
+equally invested in expanding my skills in backend development and the PERN stack to become a full-stack developer.
+
+Along with backend development I'm currently diving into the exciting world of Machine Learning, I’m eager to merge the
+creative side of web development with the analytical depth of AI. I thrive on solving challenges and designing systems
+that are efficient, intuitive, and ready to scale.
+
+When I’m not coding, I’m exploring system designs, learning about emerging technologies, and seeking opportunities to
+grow in the fields of Web Dev and Machine Learning. Let’s connect if you want to discuss tech, brainstorm ideas, or
+simply geek out about the latest in the world of development!
+<br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sauryagur/sauryagur/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sauryagur/sauryagur/output/github-snake.svg" />
+  <img alt="github-snake" src="github-snake.svg" />
+</picture>
+
+----
+
+## Rapidfire
+
+- 🔭 I’m currently working on my portfolio
 
 
-
-### Glad to see you here!  
-I’m a passionate computer engineering student working on building a strong portfolio to showcase my journey in tech. My expertise lies in creating visually appealing and user-friendly frontends using HTML, CSS, and Bootstrap, but I’m equally invested in expanding my skills in backend development and the PERN stack to become a full-stack developer.
-
-Along with backend development I'm currently diving into the exciting world of Machine Learning, I’m eager to merge the creative side of web development with the analytical depth of AI. I thrive on solving challenges and designing systems that are efficient, intuitive, and ready to scale.
-
-When I’m not coding, I’m exploring system designs, learning about emerging technologies, and seeking opportunities to grow in the fields of Web Dev and Machine Learning. Let’s connect if you want to discuss tech, brainstorm ideas, or simply geek out about the latest in the world of development!  
-  
-
-<br/>  
+- 🤔 I’m looking for help with Machine Learning
 
 
-## Rapidfire  
-
-- 🔭 I’m currently working on my portfolio  
-  
-
-- 🤔 I’m looking for help with Machine Learning  
-  
-
-- 🌱 I’m currently learning PERN Stack  
-  
-
-- 💬 Ask me about HTML, CSS and Bootstrap  
+- 🌱 I’m currently learning PERN Stack
 
 
+- 💬 Ask me about HTML, CSS and Bootstrap
 
-</td></tr></table>  
-
-<br/>  
-
+----
 
 ## Languages and Tools (Currently Learning)
+
 <div align="center">  
 <a href="https://reactjs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/react-original-wordmark.svg" alt="React" height="50" /></a>  
 <a href="https://getbootstrap.com/docs/3.4/javascript/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/bootstrap-plain.svg" alt="Bootstrap" height="50" /></a>  
@@ -76,8 +80,8 @@ When I’m not coding, I’m exploring system designs, learning about emerging t
 
 <br/>  
 
+## Github Stats
 
-## Github Stats  
 <table><tr><td valign="top" width="50%">
 
 <img src="https://github-readme-stats.vercel.app/api?username=sauryagur&show_icons=true&count_private=true&hide_border=true" align="left" style="width: 100%" />
@@ -89,9 +93,3 @@ When I’m not coding, I’m exploring system designs, learning about emerging t
 </td></tr></table>  
 
 ----
-<div align="center"></div>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sauryagur/sauryagur/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sauryagur/sauryagur/output/github-snake.svg" />
-  <img alt="github-snake" src="github-snake.svg" />
-</picture>
