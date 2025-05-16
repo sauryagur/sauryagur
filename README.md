@@ -17,8 +17,6 @@
 
 Curious builder driven by clarity, creativity, and impact. I thrive on solving real problems, learning quickly, and collaborating with passionate people.
 
-<br/>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sauryagur/sauryagur/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sauryagur/sauryagur/output/github-snake.svg" />
