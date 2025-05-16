@@ -13,9 +13,7 @@
 <img src=https://img.shields.io/badge/instagram-%23000000.svg?&style=for-the-badge&logo=instagram&logoColor=white alt=instagram style="margin-bottom: 5px;" />
 </a>
 
-### Glad to see you here!
-
-Curious builder driven by clarity, creativity, and impact. I thrive on solving real problems, learning quickly, and collaborating with passionate people.
+#### Curious builder driven by clarity, creativity, and impact. I thrive on solving real problems, learning quickly, and collaborating with passionate people.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sauryagur/sauryagur/output/github-snake-dark.svg" />
