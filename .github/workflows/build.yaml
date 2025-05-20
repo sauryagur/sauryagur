@@ -27,7 +27,7 @@ jobs:
       - name: Run script to update README
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          USER_NAME: "sauryagur"
+          USER_NAME: ${{ secrets.USER_NAME }}
         run: python today.py
 
       - name: Commit and push changes
