@@ -357,72 +357,50 @@ def stars_counter(data):
     return total_stars
 
 
-def create_default_svg(filename):
-    """
-    Creates a default SVG file if it doesn't exist
-    """
-    svg_content = '''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
-  <rect width="400" height="200" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
-  <text x="200" y="30" text-anchor="middle" fill="#f0f6fc" font-family="monospace" font-size="16" font-weight="bold">GitHub Stats</text>
-
-  <text x="20" y="60" fill="#7d8590" font-family="monospace" font-size="12">Age:</text>
-  <text x="60" y="60" fill="#f0f6fc" font-family="monospace" font-size="12" id="age_data">Loading...</text>
-
-  <text x="20" y="80" fill="#7d8590" font-family="monospace" font-size="12">Commits:</text>
-  <text x="80" y="80" fill="#f0f6fc" font-family="monospace" font-size="12" id="commit_data">0</text>
-
-  <text x="20" y="100" fill="#7d8590" font-family="monospace" font-size="12">Stars:</text>
-  <text x="70" y="100" fill="#f0f6fc" font-family="monospace" font-size="12" id="star_data">0</text>
-
-  <text x="20" y="120" fill="#7d8590" font-family="monospace" font-size="12">Repos:</text>
-  <text x="70" y="120" fill="#f0f6fc" font-family="monospace" font-size="12" id="repo_data">0</text>
-
-  <text x="20" y="140" fill="#7d8590" font-family="monospace" font-size="12">Contributions:</text>
-  <text x="120" y="140" fill="#f0f6fc" font-family="monospace" font-size="12" id="contrib_data">0</text>
-
-  <text x="20" y="160" fill="#7d8590" font-family="monospace" font-size="12">Followers:</text>
-  <text x="90" y="160" fill="#f0f6fc" font-family="monospace" font-size="12" id="follower_data">0</text>
-
-  <text x="20" y="180" fill="#7d8590" font-family="monospace" font-size="12">Lines of Code:</text>
-  <text x="130" y="180" fill="#f0f6fc" font-family="monospace" font-size="12" id="loc_data">0</text>
-</svg>'''
-
-    with open(filename, 'w', encoding='utf-8') as f:
-        f.write(svg_content)
-
-
 def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib_data, follower_data, loc_data):
     """
     Parse SVG files and update elements with my age, commits, stars, repositories, and lines written
     """
-    # Create default SVG if it doesn't exist
     if not os.path.exists(filename):
-        create_default_svg(filename)
+        print(f"Warning: SVG file {filename} does not exist. Please create it first.")
+        return
 
     try:
-        # Parse with lxml
-        parser = etree.XMLParser(recover=True)
-        tree = etree.parse(filename, parser)
+        tree = etree.parse(filename)
         root = tree.getroot()
 
-        # Update the data elements directly
-        find_and_replace(root, 'age_data', str(age_data))
-        find_and_replace(root, 'commit_data', format_number(commit_data))
-        find_and_replace(root, 'star_data', format_number(star_data))
-        find_and_replace(root, 'repo_data', format_number(repo_data))
-        find_and_replace(root, 'contrib_data', format_number(contrib_data))
-        find_and_replace(root, 'follower_data', format_number(follower_data))
-        find_and_replace(root, 'loc_data', format_number(loc_data))
+        # Use the original justify_format approach for consistency with existing SVGs
+        justify_format(root, 'commit_data', commit_data, 22)
+        justify_format(root, 'star_data', star_data, 14)
+        justify_format(root, 'repo_data', repo_data, 6)
+        justify_format(root, 'contrib_data', contrib_data)
+        justify_format(root, 'follower_data', follower_data, 10)
+        justify_format(root, 'loc_data', loc_data[2], 9)
+        justify_format(root, 'loc_add', loc_data[0])
+        justify_format(root, 'loc_del', loc_data[1], 7)
 
-        # Write the file back
-        tree.write(filename, encoding='utf-8', xml_declaration=True, pretty_print=True)
+        tree.write(filename, encoding='utf-8', xml_declaration=True)
         print(f"Successfully updated {filename}")
 
     except Exception as e:
         print(f"Error updating SVG file {filename}: {e}")
-        # Try to create a new default SVG
-        create_default_svg(filename)
+
+
+def justify_format(root, element_id, new_text, length=0):
+    """
+    Updates and formats the text of the element, and modifes the amount of dots in the previous element to justify the new text on the svg
+    """
+    if isinstance(new_text, int):
+        new_text = f"{'{:,}'.format(new_text)}"
+    new_text = str(new_text)
+    find_and_replace(root, element_id, new_text)
+    just_len = max(0, length - len(new_text))
+    if just_len <= 2:
+        dot_map = {0: '', 1: ' ', 2: '. '}
+        dot_string = dot_map[just_len]
+    else:
+        dot_string = ' ' + ('.' * just_len) + ' '
+    find_and_replace(root, f"{element_id}_dots", dot_string)
 
 
 def format_number(num):
@@ -583,16 +561,11 @@ if __name__ == '__main__':
             contrib_data += archived_data[-1]
             commit_data += int(archived_data[-2])
 
-        # Update SVG files
-        svg_overwrite('stats.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data,
-                      total_loc[2])
-
-        # Also create dark and light mode versions if they exist
-        if os.path.exists('dark_mode.svg') or os.path.exists('light_mode.svg'):
-            svg_overwrite('dark_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data,
-                          total_loc[2])
-            svg_overwrite('light_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data,
-                          total_loc[2])
+        # Update SVG files (only dark_mode.svg and light_mode.svg)
+        svg_overwrite('dark_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data,
+                      total_loc[:-1])
+        svg_overwrite('light_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data,
+                      total_loc[:-1])
 
         print('Total GitHub GraphQL API calls:', '{:>3}'.format(sum(QUERY_COUNT.values())))
         for funct_name, count in QUERY_COUNT.items():
